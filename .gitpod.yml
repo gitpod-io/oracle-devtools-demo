@@ -14,7 +14,7 @@ tasks:
       sudo alien -i oracle-instantclient*-sqlplus*.rpm &&
       sudo alien -i oracle-instantclient*-devel*.rpm &&
 
-      sudo echo '/usr/lib/oracle/21/client64/lib/ ' > /etc/ld.so.conf.d/oracle.conf &&
+      echo '/usr/lib/oracle/21/client64/lib/' | sudo tee -a /etc/ld.so.conf.d/oracle.conf &&
       sudo ldconfig &&
 
       wget https://ipfs.interclip.app/ipfs/bafybeiaciknwozpt7gqsvnjyoyvpws26osi3htfnrhhij2bduylgt35vje/Oracle.oracledevtools-21.4.0.vsix -o devtools.vsix &&
