@@ -5,7 +5,18 @@ tasks:
   - init: echo 'init script' # runs during prebuild
     command: >
       sudo apt update &&
-      sudo apt install libaio1 unixodbc -y &&
+      sudo apt install libaio1 unixodbc alien -y &&
+
+      wget https://download.oracle.com/otn_software/linux/instantclient/216000/oracle-instantclient-basic-21.6.0.0.0-1.el8.x86_64.rpm &&
+      wget https://download.oracle.com/otn_software/linux/instantclient/216000/oracle-instantclient-sqlplus-21.6.0.0.0-1.el8.x86_64.rpm &&
+      wget https://download.oracle.com/otn_software/linux/instantclient/216000/oracle-instantclient-devel-21.6.0.0.0-1.el8.x86_64.rpm &&
+      sudo alien -i oracle-instantclient*-basic*.rpm &&
+      sudo alien -i oracle-instantclient*-sqlplus*.rpm &&
+      sudo alien -i oracle-instantclient*-devel*.rpm &&
+
+      echo '/usr/lib/oracle/21/client64/lib/ ' > /etc/ld.so.conf.d/oracle.conf &&
+      sudo ldconfig &&
+
       wget https://ipfs.interclip.app/ipfs/bafybeiaciknwozpt7gqsvnjyoyvpws26osi3htfnrhhij2bduylgt35vje/Oracle.oracledevtools-21.4.0.vsix -o devtools.vsix &&
       mkdir /tmp/oracle &&
       docker run -it -d --name db -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=test -v /tmp/oracle:/opt/oracle/oradata container-registry.oracle.com/database/express:21.3.0-xe /bin/bash
