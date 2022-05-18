@@ -7,7 +7,7 @@ RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-p
 RUN sudo apt-get update; \
   sudo apt-get install -y apt-transport-https && \
   sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-6.0;¨
+  sudo apt-get install -y dotnet-sdk-6.0;
 
 RUN sudo apt-get update; \
   sudo apt-get install -y apt-transport-https && \
