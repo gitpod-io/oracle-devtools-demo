@@ -8,4 +8,4 @@ tasks:
       sudo apt install libaio1 unixodbc -y &&
       wget https://ipfs.interclip.app/ipfs/bafybeiaciknwozpt7gqsvnjyoyvpws26osi3htfnrhhij2bduylgt35vje/Oracle.oracledevtools-21.4.0.vsix -o devtools.vsix &&
       mkdir /tmp/oracle &&
-      docker run -it -d --name db -p 51521:1521 -p 5500:5500 -e ORACLE_PWD=test -v /tmp/oracle:/opt/oracle/oradata container-registry.oracle.com/database/express:21.3.0-xe /bin/bash
+      docker run -it -d --name db -p 1521:1521 -p 5500:5500 -e ORACLE_PWD=test -v /tmp/oracle:/opt/oracle/oradata container-registry.oracle.com/database/express:21.3.0-xe /bin/bash
