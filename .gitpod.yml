@@ -18,7 +18,7 @@ tasks:
       sudo ldconfig &&
 
       wget https://ipfs.interclip.app/ipfs/bafybeiaciknwozpt7gqsvnjyoyvpws26osi3htfnrhhij2bduylgt35vje/Oracle.oracledevtools-21.4.0.vsix -o devtools.vsix &&
-      mkdir /tmp/oracle;
+      mkdir -p /tmp/oracle;
 
   - init: docker pull container-registry.oracle.com/database/express:21.3.0-xe
     command: >
