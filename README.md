@@ -1,6 +1,6 @@
 # Gitpod + Oracle DB + Oracle DevTools Extension demo
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/oracle-devtools-test)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/oracle-devtools-demo)
 
 This is a repository for demoing connecting to Oracle Databases via their [DevTools Extension](https://marketplace.visualstudio.com/items?itemName=Oracle.oracledevtools).
 
