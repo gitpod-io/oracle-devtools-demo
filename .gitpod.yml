@@ -1,9 +1,12 @@
 image:
   file: .gitpod.Dockerfile
 
+vscode:
+  extensions:
+    - https://ipfs.interclip.app/ipfs/bafybeiaciknwozpt7gqsvnjyoyvpws26osi3htfnrhhij2bduylgt35vje/Oracle.oracledevtools-21.4.0.vsix
+
 tasks:
   - name: Install & Start Oracle
     init: docker pull gvenzl/oracle-xe
     command: docker run --name db -d -p 1521:1521 -e ORACLE_RANDOM_PASSWORD=test -e APP_USER=gitpod -e APP_USER_PASSWORD=gitpod gvenzl/oracle-xe
-  - name: Install Oracle Extension
-    command: wget https://ipfs.interclip.app/ipfs/bafybeiaciknwozpt7gqsvnjyoyvpws26osi3htfnrhhij2bduylgt35vje/Oracle.oracledevtools-21.4.0.vsix -O /tmp/oracledevtools.vsix && code --install-extension /tmp/oracledevtools.vsix
+
